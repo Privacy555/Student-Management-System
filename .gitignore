@@ -1,0 +1,3 @@
+#These won't get tracked by git.
+node_modules/
+.env
