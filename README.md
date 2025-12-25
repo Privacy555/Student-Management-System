@@ -1,13 +1,14 @@
 # Student-Management-System
 A RESTful school management backend built with Node.js, Express, MongoDB, and JWT, featuring secure authentication and role-based access control for admins and mentors.
 
-@@@@@ **Overview** @@@@@@
+ ## **Overview** 
+ 
 This project is a role-based School Management System backend developed using Node.js, Express, MongoDB, and JWT authentication.
 The application focuses on secure authentication, authorization, and clean API design for managing admins, mentors, and academic data.
 The system follows real-world backend practices such as middleware-based authorization, password hashing, and modular project structure.
 
 
-@@@@@@ **Features** @@@@@@@@
+## **Features** 
 
   1. JWT-based Authentication
 
@@ -28,7 +29,7 @@ The system follows real-world backend practices such as middleware-based authori
   9. Protected routes using JWT verification
 
  
-@@@@@ **Tech Stack** @@@@@
+## **Tech Stack** 
 
   Backend: Node.js, Express.js
 
@@ -44,25 +45,28 @@ The system follows real-world backend practices such as middleware-based authori
 
 
 
-@@@@@ **👥 Roles in the System** @@@@@
+## **👥 Roles in the System** 
 
-  🔹 _Admin_
-   -Login using email and password
-   -Create mentor accounts
-   -Access protected administrative routes
+  ### 🔹 _Admin_
+  
+   - Login using email and password
+   - Create mentor accounts
+   - Access protected administrative routes
 
-  🔹_ Mentor_
-   -Securely stored credentials
-   -Access controlled by role-based middleware
+  ### 🔹_ Mentor_
+  
+  - Securely stored credentials
+  - Access controlled by role-based middleware
 
-  🔹_ Student_
-    - Signup
-    - Login using email and password
-    - Access protected administrative routes
+  ### 🔹_ Student_
+  
+  - Signup
+  - Login using email and password
+  - Access protected administrative routes
 
 
 
-@@@@@ 🧠 **Core Concepts Implemented** @@@@@
+## 🧠 **Core Concepts Implemented** 
 
    1. JWT Authentication Flow
 
@@ -79,7 +83,7 @@ The system follows real-world backend practices such as middleware-based authori
 
 
 
-@@@@@ 🔐 **Authentication Flow** @@@@@
+## 🔐 **Authentication Flow** 
 
    Admin logs in using email and password
 
