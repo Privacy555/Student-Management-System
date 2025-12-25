@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+ HEAD
 # 🎓 School Management System – Backend
 
  ## Overview
