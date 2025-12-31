@@ -1,0 +1,177 @@
+{
+	"info": {
+		"_postman_id": "46b08fb2-b881-4a9a-9877-b8811eba6173",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43497397",
+		"_collection_link": "https://pratik-3561638.postman.co/workspace/Pratik's-Workspace~9ca5c090-c273-46c1-8482-4b6c8d840404/collection/43497397-46b08fb2-b881-4a9a-9877-b8811eba6173?action=share&source=collection_link&creator=43497397"
+	},
+	"item": [
+		{
+			"name": "students signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Abhishek\",\r\n    \"dob\": \"2003-10-20\",\r\n    \"gender\": \"Male\",\r\n    \"roll_no\": 11242707,\r\n    \"year\": 2,\r\n    \"email\": \"abhishek123@gmail.com\",\r\n    \"password\": \"12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/students/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"students",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "admin_login",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NGQxYjk1NTlkM2E2NmVhYWI5MTUyZSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc2NjY2MTA0MH0.4fwAzuEIpVjj-ZnusHIpKfZHAYuWV5IT36ygeKcGumQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Dr. ABC\",\r\n  \"id\": 101,\r\n  \"mentorOf\": [\r\n    {\r\n      \"year\": 3,\r\n      \"section\": \"A\"\r\n    }\r\n  ],\r\n  \"email\": \"anil.sharma@college.edu\",\r\n  \"password\": \"mentor@123\",\r\n  \"role\": \"mentor\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/admin/create-mentor",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"admin",
+						"create-mentor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create-mentor",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "mentor_login",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAyLCJwYXNzd29yZCI6IiQyYiQxMCRzNy9Qc2JuOEltbS9sL1NMQTc5UFMueGthd01UTWFYOXBDYnBYZkZxUkJmQWx3ZldzWlgxcSIsImlhdCI6MTc2NjY2OTkxNX0.sk_BwLJf_Wec7DoukvIcZ61iA9x8DB22ILkUYwodjoA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"pratik@college.edu\",\r\n    \"password\":\"mentor@123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/mentors/marks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"mentors",
+						"marks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Marks_control_by_mentor",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "student_homePage",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "student_login",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "student_profile",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "fee_control_by_admin",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "fee_check_by_student",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
