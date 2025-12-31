@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🎓 School Management System – Backend
 
  ## Overview
@@ -92,3 +93,7 @@ JWT token is generated and returned
 Token is sent in Authorization header for protected routes
 
 Middleware verifies token and role before allowing access
+=======
+# Student-Management-System
+A RESTful school management backend built with Node.js, Express, MongoDB, and JWT, featuring secure authentication and role-based access control for admins and mentors.
+>>>>>>> 8ab14a4 (Initial commit)
