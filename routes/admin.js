@@ -5,47 +5,17 @@ const router=express.Router();
 const Admin=require('./../models/admin');
 const Mentor=require('./../models/mentor');
 
+const adminController=require('./../controllers/adminController');
+
 const {jwtAuthMiddleware,generateToken}=require('./../jwt');
 const roleMiddleware=require('./../roleMiddleware');
 
-router.post('/login', async (req, res) => {
-    try {
-        const { email, password } = req.body;
 
-        const user = await Admin.findOne({ email }).select('+password');        //we did .select('+password')  cuz we have used select:false in password section in mentor model.
-        if (!user) {
-            return res.status(401).json({ error: "Invalid credentials" });
-        }
 
-        const passwordMatch = await user.comparePassword(password);
-        if (!passwordMatch) {
-            return res.status(401).json({ error: "Invalid credentials" });
-        }
-
-        const payload={
-            id: user._id,
-            role: user.role                     ////role is important for roleMiddleware.
-        }
-        const token = generateToken(payload);
-
-        res.status(200).json({ token });
-
-    } catch (err) {
-        console.error(err);
-        res.status(500).json({ error: "Internal server error" });
-    }
-});
+router.post('/login',adminController.loginAdmin);
 
 
 /* ➕ Create Mentor (ADMIN ONLY) */
-router.post('/create-mentor',jwtAuthMiddleware,roleMiddleware('admin'), async (req, res) => {            //role of middlewares matters.
-    try {
-        await Mentor.create(req.body);
-
-        res.status(201).json({ message: "Mentor created" });
-    } catch (err) {
-        res.status(500).json({ error: err.message });
-    }
-});
+router.post('/create-mentor',jwtAuthMiddleware,roleMiddleware('admin'),adminController.createMentor );
 
 module.exports=router;
