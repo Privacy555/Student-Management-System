@@ -27,7 +27,7 @@ app.use('/students',studentsRoute);
 
 
 const mentorsRoute=require('./routes/mentors');
-const { message } = require('prompt');
+
 console.log(typeof mentorsRoute);  // must be function
 app.use('/mentors',mentorsRoute);
 
