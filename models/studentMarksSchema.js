@@ -24,7 +24,7 @@ const MarksSchema= new mongoose.Schema({
     HumanValues:{
          type: Number, min: 0, max: 100 
         }
-});
+},{timestamps:true});
 
 const studentMarksModel=mongoose.model('studentMarksDetails',MarksSchema);
 

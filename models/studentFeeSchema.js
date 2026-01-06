@@ -22,7 +22,7 @@ const feeSchema= new mongoose.Schema({
         type:Boolean,
         default:false
     }
-});
+},{timestamps:true});
 
 const studentFeeStructure=mongoose.model('studentFeeStructure',feeSchema);
 

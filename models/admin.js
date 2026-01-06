@@ -20,7 +20,7 @@ const adminSchema = new mongoose.Schema({
         type: String,
         default: 'admin'
     }
-});
+},{timestamps:true});
 
 /* Hash password */
 adminSchema.pre('save', async function () {
