@@ -22,7 +22,33 @@ router.get('/profile/marks',jwtAuthMiddleware,studentController.getMarks)
 router.put('/profile',jwtAuthMiddleware,studentController.updateProfile);
 
 router.get('/',(req,res)=>{
-    res.send("Welcome to our student page . from here onwards,just by changing path,you'll be directed to different informations.\n 1. students/signup ->for signup\n 2. students/login ->for login \n 3. students/profile (make sure to send request with token) ->for your information\n 4. students/profile/fees ->for your fees status")
+     res.json({
+        message: "Welcome to Student API",
+        endpoints: {
+            signup: {
+                method: "POST",
+                path: "/students/signup",
+                description: "Student registration"
+            },
+            login: {
+                method: "POST",
+                path: "/students/login",
+                description: "Student login"
+            },
+            profile: {
+                method: "GET",
+                path: "/students/profile",
+                authRequired: true,
+                description: "Get student profile details"
+            },
+            fees: {
+                method: "GET",
+                path: "/students/profile/fees",
+                authRequired: true,
+                description: "Get student fee status"
+            }
+        }
+    });
 });
 
 

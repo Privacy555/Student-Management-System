@@ -4,7 +4,7 @@ const express=require('express');
 const router=express.Router();
 const {jwtAuthMiddleware,generateToken}=require('./../jwt');
 
-const Mentor=require('./../models/mentor');
+
 const mentorController=require('./../controllers/mentorController');
 
 
@@ -40,7 +40,26 @@ router.get('/year/:YEAR',mentorController.getStudentsByYear);
 /* ================= HOME ================= */
 
 router.get('/',(req,res)=>{
-    res.send("Welcome to mentor section of our student management system.\n1) mentors/year/YEAR -> to get student details of given year.\n2) mentors/marks -> to get details about marks of all students.\n3) mentors/marks/:roll -> to get marks details of given student or to update marks of that student. ");
+    res.json({
+        message: "Welcome to Mentor API",
+        availableRoutes: {
+            getStudentsByYear: {
+                method: "GET",
+                path: "/mentors/year/:YEAR",
+                description: "Get student details of a given year"
+            },
+            getAllMarks: {
+                method: "GET",
+                path: "/mentors/marks",
+                description: "Get marks of all students"
+            },
+            getOrUpdateMarks: {
+                method: "GET / PUT",
+                path: "/mentors/marks/:roll",
+                description: "Get or update marks of a specific student"
+            }
+        }
+    })
 });
 
 module.exports=router;

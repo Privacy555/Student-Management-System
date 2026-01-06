@@ -27,12 +27,31 @@ router.get('/:roll/getFee',adminController.getFee);
 router.post('/create-mentor',adminController.createMentor );
 
 router.get('/',(req,res)=>{
-    res.send(`
-             1. admin/login               -> for logging in
-             2. admin/:ROLL_NUM/createFee -> for creating fee details.
-             3. admin/:ROLL_NUM/updateFee -> for updating fee details of existing user.
-             4. admin/:ROLL_NUM/getFee    -> for fetching fee details.
-        `)
+    res.json({
+    message: "Welcome to Admin API",
+    endpoints: {
+        login: {
+            method: "POST",
+            path: "/admin/login",
+            description: "Admin login"
+        },
+        createFee: {
+            method: "POST",
+            path: "/admin/:ROLL_NUM/createFee",
+            description: "Create fee details"
+        },
+        updateFee: {
+            method: "PUT",
+            path: "/admin/:ROLL_NUM/updateFee",
+            description: "Update existing fee details"
+        },
+        getFee: {
+            method: "GET",
+            path: "/admin/:ROLL_NUM/getFee",
+            description: "Fetch fee details"
+        }
+    }
+});
 });
 
 module.exports=router;

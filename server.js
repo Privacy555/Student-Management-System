@@ -27,6 +27,7 @@ app.use('/students',studentsRoute);
 
 
 const mentorsRoute=require('./routes/mentors');
+const { message } = require('prompt');
 console.log(typeof mentorsRoute);  // must be function
 app.use('/mentors',mentorsRoute);
 
@@ -35,9 +36,16 @@ app.use('/mentors',mentorsRoute);
 //app.use('/teachers',teacherRoute);
 
 app.get('/',(req,res)=>{
-  res.send("Welcome to our student management system. \n1)/students/ -> if you are student.\n/mentors/ -> if you are mentor.\n");
+    res.json({
+        message: "Welcome to Student API",
+        routes: {
+            signup: "/students/signup",
+            login: "/students/login",
+            profile: "/students/profile (token required)",
+            fees: "/students/profile/fees"
+        }
+    });
 });
-
 
 const PORT=process.env.PORT;
 app.listen(PORT, () => {
